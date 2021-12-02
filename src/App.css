@@ -1,0 +1,34 @@
+body {
+  background: #a7cef0;
+}
+
+.container {
+  display:flex !important;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  margin: auto;
+}
+.container > form {
+  width: 75%;
+  border:1px solid #dfdfdf;
+  padding:20px;
+  border-radius: 5px;
+  background: #fff;
+}
+
+button {
+  margin-top:10px !important;
+}
+p {
+  color:red
+}
+th, table {
+  padding:10px;
+  background-color: rgb(118, 202, 250);
+}
+td{
+  padding:10px;
+  background-color: rgb(205, 235, 253);
+}
