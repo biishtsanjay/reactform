@@ -32,13 +32,13 @@ function App() {
       username: formValues.username,
       age: formValues.age,
       email: formValues.email,
-      phonenumber: formValues.phonenumber,
+      phonenumber: formValues.phonenumber
     };
     const newContacts = [...contacts, newContact];
     setContacts(newContacts);
     setFormErrors(validate(formValues));
     setIsSubmit(true);
-    // alert("Form Submitted successfully");
+    alert("Form Submitted successfully");
     setFormValues(initialValues);
   };
 
@@ -70,8 +70,8 @@ function App() {
     }
     if (!values.phonenumber) {
       errors.phonenumber = "*This field is required";
-    } else if (values.phonenumber < 10) {
-      errors.phonenumber = "Phone Number must be exactly of length 10";
+    } else if (values.phonenumber != 10) {
+      errors.phonenumber = "Phone Number must be exactly 10 digits long";
     }
     return errors;
   };
@@ -92,6 +92,7 @@ function App() {
               max="20"
               value={formValues.username}
               onChange={handleChange}
+              required
             />
           </div>
           <p>{formErrors.username}</p>
@@ -105,6 +106,7 @@ function App() {
               max="99"
               value={formValues.age}
               onChange={handleChange}
+              required
             />
           </div>
           <p>{formErrors.age}</p>
@@ -116,6 +118,7 @@ function App() {
               placeholder="email"
               value={formValues.email}
               onChange={handleChange}
+              required
             />
           </div>
           <p>{formErrors.email}</p>
@@ -128,13 +131,16 @@ function App() {
               pattern="[789][0-9]{9}"
               value={formValues.phonenumber}
               onChange={handleChange}
+              required
             />
           </div>
           <p>{formErrors.phonenumber}</p>
           <button onClick={cancelValues} className="fluid red ui button">
             Reset
           </button>
-          <button className="fluid ui button green">Submit</button>
+
+          <button className="fluid ui button green" >Submit</button>
+          
         </div>
       </form>
       <table>
